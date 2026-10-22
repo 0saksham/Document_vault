@@ -1,0 +1,23 @@
+# Sensitive data — NEVER commit these
+data/
+vault-data.json
+vault-map.json
+
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Environment
+*.env
+.env.*
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

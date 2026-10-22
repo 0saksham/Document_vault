@@ -1,0 +1,24 @@
+{
+  "_comment": "Copy this file to vault-data.json at the project root (git-ignored) and edit with your real personal details. NEVER commit vault-data.json to git.",
+  "vehicleNumber": "XX00XX0000",
+  "bloodGroup": "",
+  "accountNumber": "000000000000",
+  "metadata": {
+    "doc-insurance": {
+      "expiry": "YYYY-MM-DD",
+      "note": ""
+    },
+    "doc-puc": {
+      "expiry": "YYYY-MM-DD",
+      "note": ""
+    },
+    "doc-dl": {
+      "expiry": "YYYY-MM-DD",
+      "note": ""
+    },
+    "doc-passport": {
+      "expiry": "YYYY-MM-DD",
+      "note": ""
+    }
+  }
+}

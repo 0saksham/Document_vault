@@ -1,0 +1,21 @@
+{
+  "_comment": "Copy this file to vault-map.json at the project root (git-ignored). Maps document IDs to file paths relative to the data/ folder. Set to empty string \"\" or null for empty placeholders (e.g. Passport, DL, PUC). To add a document later, place the file in data/ and update its relative path here.",
+  "doc-10th": "",
+  "doc-12th": "",
+  "doc-aadhar": "",
+  "doc-voter": "",
+  "doc-pan": "",
+  "doc-passport": "",
+  "doc-domicile": "",
+  "doc-permres": "",
+  "doc-birth": "",
+  "doc-signature": "",
+  "doc-photo": "",
+  "doc-dl": "",
+  "doc-puc": "",
+  "doc-rc": "",
+  "doc-insurance": "",
+  "doc-qr": "",
+  "doc-college-digital": "",
+  "doc-college-physical": ""
+}
