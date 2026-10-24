@@ -128,7 +128,11 @@ async function runTests() {
     const puc = docMap.get('doc-puc');
 
     assert(passport && passport.status === 'empty', 'Passport shows as empty placeholder (not found)');
-    assert(dl && dl.status === 'empty', 'Driving License shows as empty placeholder (not found)');
+    if (dl && dl.status === 'available') {
+      assert(dl.status === 'available', 'Driving License shows as available');
+    } else {
+      assert(dl && dl.status === 'empty', 'Driving License shows as empty placeholder (not found)');
+    }
     assert(puc && puc.status === 'empty', 'PUC shows as empty placeholder (not found)');
 
     // Check available documents

@@ -29,7 +29,7 @@ The vault organizes documents across 7 life domains:
 | Identity Proof | Birth Certificate | Document | ✅ Available |
 | Personal Info | Signature | Document | ✅ Available |
 | Personal Info | Passport Size Photo | Document | ✅ Available |
-| Vehicle | Driving License | Document | ⬜ Empty placeholder |
+| Vehicle | Driving License | Document | ✅ Available |
 | Vehicle | Pollution Paper (PUC) | Document | ⬜ Empty placeholder |
 | Vehicle | RC | Document | ✅ Available |
 | Vehicle | Insurance | Document | ✅ Available |
@@ -40,7 +40,7 @@ The vault organizes documents across 7 life domains:
 | College | College ID Card (Digital) | Document | ✅ Available |
 | College | College ID Card (Physical) | Document | ✅ Available |
 
-**Empty documents** (Passport, Driving License, PUC): appear as greyed-out "Not added yet" placeholders with an indicator showing they can be added later.
+**Empty documents** (Passport, PUC): appear as greyed-out "Not added yet" placeholders with an indicator showing they can be added later.
 
 ---
 
