@@ -14,10 +14,21 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,svg,woff2}'],
         runtimeCaching: [
           {
-            urlPattern: /\/vault\/.*\.enc$/,
+            // Manifest holds the vault index; always check network first so updates appear immediately
+            urlPattern: /\/vault\/manifest\.enc(\?.*)?$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'vault-manifest',
+              networkTimeoutSeconds: 3,
+              expiration: { maxEntries: 5, maxAgeSeconds: 60 * 60 * 24 * 7 }
+            }
+          },
+          {
+            // Document ciphertexts are content-addressed by UUID; CacheFirst enables offline viewing
+            urlPattern: /\/vault\/[a-f0-9-]+\.enc$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'vault-encrypted',
+              cacheName: 'vault-documents',
               expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 }
             }
           }

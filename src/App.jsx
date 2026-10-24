@@ -121,7 +121,7 @@ export default function App() {
   }, [unlocked])
 
   const handleUnlock = useCallback(async (password) => {
-    const res = await fetch('/vault/manifest.enc')
+    const res = await fetch(`/vault/manifest.enc?t=${Date.now()}`, { cache: 'no-cache' })
     if (!res.ok) throw new Error('Vault not found. Run npm run encrypt first.')
     const buf = await res.arrayBuffer()
     const manifest = await decryptManifest(buf, password)

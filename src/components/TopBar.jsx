@@ -103,7 +103,8 @@ export default function TopBar({
         (d) =>
           d.title.toLowerCase().includes(q) ||
           d.domainTitle?.toLowerCase().includes(q) ||
-          (d.textValue && d.textValue.toLowerCase().includes(q))
+          (d.textValue && d.textValue.toLowerCase().includes(q)) ||
+          (d.note && d.note.toLowerCase().includes(q))
       )
       .slice(0, 10)
     setResults(matched)

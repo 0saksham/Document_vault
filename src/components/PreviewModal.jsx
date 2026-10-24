@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { fetchAndDecrypt, fetchAndDecryptRaw } from '../lib/crypto'
 import { getPassword, registerBlobUrl, revokeBlobUrl } from '../lib/vault'
 import PdfViewer from './PdfViewer'
+import { formatExpiryDate } from './ExpiryBadge'
 import {
   CloseIcon,
   DownloadIcon,
@@ -557,10 +558,20 @@ export default function PreviewModal({ doc, allDomainDocs, onClose, addToast }) 
         }}
         onMouseLeave={showToolbarTemporarily}
       >
-        {/* Document Title */}
+        {/* Document Title & Metadata */}
         <div className="preview-title" title={currentDoc.title}>
           <span className="preview-title-badge">PREVIEW</span>
           <span className="preview-title-text">{currentDoc.title}</span>
+          {currentDoc.expiry && (
+            <span className="preview-meta-pill" title={`Expires: ${formatExpiryDate(currentDoc.expiry)}`}>
+              📅 {formatExpiryDate(currentDoc.expiry)}
+            </span>
+          )}
+          {currentDoc.note && (
+            <span className="preview-meta-pill preview-note-pill" title={currentDoc.note}>
+              📝 {currentDoc.note}
+            </span>
+          )}
         </div>
 
         <div className="toolbar-sep" aria-hidden />

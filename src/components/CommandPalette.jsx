@@ -174,7 +174,8 @@ export default function CommandPalette({
       (item) =>
         item.title.toLowerCase().includes(q) ||
         item.subtitle.toLowerCase().includes(q) ||
-        (item.doc?.textValue && item.doc.textValue.toLowerCase().includes(q))
+        (item.doc?.textValue && item.doc.textValue.toLowerCase().includes(q)) ||
+        (item.doc?.note && item.doc.note.toLowerCase().includes(q))
     )
   }, [manifest, query, theme, soundOn, vibeOn, onClose, onLock, onNavigateDomain, onNavigateDoc, setTheme, addToast])
 

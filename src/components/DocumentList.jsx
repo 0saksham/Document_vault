@@ -319,6 +319,9 @@ function DocCard({ doc, index, domainCfg, onClick, addToast }) {
                 {doc.sizeBytes && (
                   <span className="doc-size-text">· {formatSize(doc.sizeBytes)}</span>
                 )}
+                {doc.note && (
+                  <span className="doc-note-text" title={doc.note}>· {doc.note}</span>
+                )}
               </>
             )}
           </div>

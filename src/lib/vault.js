@@ -98,7 +98,7 @@ export function getExpiryStatus(doc) {
   const expiry = new Date(doc.expiry);
   const now = new Date();
   const daysLeft = Math.floor((expiry - now) / (1000 * 60 * 60 * 24));
-  if (daysLeft < 0) return { daysLeft, status: 'expired' };
-  if (daysLeft <= 30) return { daysLeft, status: 'warning' };
-  return { daysLeft, status: 'ok' };
+  if (daysLeft < 0) return { daysLeft, status: 'expired', expiryDate: doc.expiry };
+  if (daysLeft <= 30) return { daysLeft, status: 'warning', expiryDate: doc.expiry };
+  return { daysLeft, status: 'ok', expiryDate: doc.expiry };
 }
